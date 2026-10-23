@@ -1,0 +1,7 @@
+/target/
+/tuya.local.properties
+/.env
+/*.log
+/.idea/
+*.iml
+/.runtime/
