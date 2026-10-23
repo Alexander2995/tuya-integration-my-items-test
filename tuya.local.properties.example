@@ -1,0 +1,16 @@
+# Copy to tuya.local.properties; edit locally. Do not share the filled file.
+TUYA_CLIENT_ID=REPLACE_ME
+TUYA_CLIENT_SECRET=REPLACE_ME
+TUYA_ENDPOINT=https://openapi.tuyaeu.com
+TUYA_DEVICE_ID=REPLACE_ME
+# Match API Explorer: CLOUD_V2, DEVICES_V1 or IOT03
+TUYA_API_FAMILY=CLOUD_V2
+# Optional explicit DP selection, copied from this device's specification.
+TUYA_RELAY_CODE=
+TUYA_POWER_CODE=
+TUYA_VOLTAGE_CODE=
+TUYA_CURRENT_CODE=
+TUYA_ENERGY_CODE=
+# Event subscription. AES-GCM only. PROD for normal devices, TEST for test channel.
+TUYA_MQ_ENABLED=false
+TUYA_MQ_ENV=PROD

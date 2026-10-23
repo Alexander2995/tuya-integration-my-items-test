@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Кластер К12 · my-items</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script></head>
+<body>
+<header class="topbar"><a class="brand" href="/" aria-label="my-items — главная"><span class="brand-mark">m<span>·</span></span> my-items<span class="domain">.net</span></a><span class="environment"><span class="dot"></span> Локальная лаборатория</span></header>
+<main>
+  <div class="intro"><div><div class="eyebrow">ИСТОЧНИКИ ДАННЫХ / TUYA CLOUD</div><h1>Кластер К12<span class="title-dot">.</span></h1><p class="subtitle">Энергопотребление предмета через умную розетку</p></div><button id="refresh" class="button secondary"><span aria-hidden="true">↻</span> Обновить</button></div>
+  <div id="notice" class="notice" role="status" aria-live="polite">Подготовка подключения…</div>
+  <section class="connection-grid" aria-label="Подключение">
+    <div class="connection"><span class="connection-icon" aria-hidden="true">☁</span><div><div class="label">Tuya Cloud</div><div id="cloud" class="connection-value">Не проверено</div></div><span id="cloud-dot" class="status-dot"></span></div>
+    <div class="connection"><span class="connection-icon" aria-hidden="true">⌁</span><div><div class="label">Розетка</div><div id="online" class="connection-value">Нет данных</div></div><span id="online-dot" class="status-dot"></span></div>
+  </section>
+  <section class="event-panel" aria-label="События Tuya"><div class="event-title"><span id="event-dot" class="status-dot"></span><strong>События Tuya</strong><span id="event-state">Проверка подписки…</span></div><p id="event-message">Подключение страницы к локальному потоку обновлений…</p><div class="event-details"><span>Получено: <b id="event-count">0</b></span><span>Последнее событие розетки: <b id="event-time">Ещё не получено</b></span><span id="page-stream">Связь со страницей: подключение…</span></div></section>
+  <section class="dashboard">
+    <article class="power-card"><div class="card-heading"><span class="eyebrow">ПОТРЕБЛЯЕМАЯ МОЩНОСТЬ</span><span class="live-label">Показание Tuya</span></div><div class="power-body"><div><div class="power-number"><span id="power">Нет данных</span><span id="power-unit" class="power-unit" hidden>Вт</span></div><p id="power-note" class="power-note">Значение появится после подключения</p></div><div class="power-art" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M57 12 27 55h24l-7 33 31-46H51Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg></div></div><div class="power-footer"><span>Время отчёта мощности</span><span id="power-reported">API не предоставил</span></div></article>
+    <article class="relay-card"><div class="eyebrow">УПРАВЛЕНИЕ РОЗЕТКОЙ</div><div class="relay-state"><span id="relay-icon" class="relay-icon" aria-hidden="true">⏻</span><div><div id="relay" class="relay-value">Нет данных</div><div id="device-name" class="label">Ожидание данных устройства</div></div></div><div class="relay-buttons"><button id="turn-on" class="button primary" disabled>Включить</button><button id="turn-off" class="button secondary" disabled>Выключить</button></div><p id="command-result" class="command-result" role="status" aria-live="polite">Команды отправляются только по нажатию кнопки.</p></article>
+  </section>
+  <section class="measurements" aria-label="Дополнительные измерения">
+    <article class="metric-card"><div class="label">Напряжение</div><div id="voltage" class="metric-value">Нет данных</div><div id="voltage-time" class="metric-time">Время отчёта не предоставлено</div></article>
+    <article class="metric-card"><div class="label">Ток</div><div id="current" class="metric-value">Нет данных</div><div id="current-time" class="metric-time">Время отчёта не предоставлено</div></article>
+    <article class="metric-card"><div class="label">Энергия · показатель устройства</div><div id="energy" class="metric-value">Нет данных</div><div id="energy-time" class="metric-time">Период и накопительный характер не определены</div></article>
+  </section>
+  <section class="refresh-panel" aria-label="Обновление данных"><div><div class="label">Последнее успешное получение</div><div id="received" class="received">Ещё не выполнялось</div></div><div class="auto-controls"><label class="checkbox"><input id="auto" type="checkbox"> Автообновление</label><label class="interval">каждые <input id="interval" type="number" min="30" max="3600" value="60" step="1" aria-label="Интервал автообновления в секундах"> с</label></div></section>
+  <p class="quota-note">При активной подписке показания обновляются по событиям Tuya. Включённый опрос служит резервом при недоступности очереди и расходует квоту REST. Очередь работает, пока запущено приложение, даже если страница закрыта; сообщения учитываются в тарифе Tuya. Время получения и время отчёта устройства могут различаться.</p>
+  <section class="diagnostics"><div class="diagnostics-heading"><h2>Диагностика</h2><span id="family" class="code-label">CLOUD_V2</span></div><p>Отобранные поля ответов: идентификаторы, секреты и строковые значения скрыты. Единицы и масштаб — из модели конкретного устройства.</p><div id="warnings" class="warnings"></div><details><summary>Ответ состояния <span>Показатели и время отчёта</span></summary><pre id="raw-status">Нет данных</pre></details><details><summary>Спецификация <span>Типы, единицы и scale</span></summary><pre id="raw-spec">Нет данных</pre></details></section>
+  <footer><span>my-items × Tuya</span><span>Локальное демо · Java 17 · серверные ключи</span></footer>
+</main>
+</body></html>
